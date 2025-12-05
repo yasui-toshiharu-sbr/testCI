@@ -14,9 +14,9 @@ jobs:
       - name: Run tests and generate artifacts
         uses: matlab-actions/run-tests@v2
         with:
-          test-results-junit:test-results/results.xml
-          test-results-pdf:test-results/results.pdf
-          test-results-simulink-test:test-results/results.mldatx
+          test-results-junit: test-results/results.xml
+          test-results-pdf: test-results/results.pdf
+          test-results-simulink-test: test-results/results.mldatx
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
