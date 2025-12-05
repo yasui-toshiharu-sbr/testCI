@@ -5,19 +5,19 @@ jobs:
   name: Run MATLAB Tests and Generate Artifacts
   runs-on: ubuntu-latest
   steps:
-   -name: Check out repository
+   - name: Check out repository
     uses: actions/checkout@v4
-   -name: Set up MATLAB
+   - name: Set up MATLAB
     uses: matlab-actions/setup-matlab@v2
     with:
       products: Simulink Simulink_Test Simulink_Coverage
-  -name: Run tests and generate artifacts
+  - name: Run tests and generate artifacts
    uses: matlab-actions/run-tests@v2
   with:
     test-results-junit:test-results/results.xml
     test-results-pdf:test-results/results.pdf
     test-results-simulink-test:test-results/results.mldatx
-  -name: Upload artifact
+  - name: Upload artifact
    uses: actions/upload-artifact@v4
    with:
     name: test-results
